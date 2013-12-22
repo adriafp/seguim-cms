@@ -1,0 +1,88 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    padding-top: 41px;
+}
+
+/*.hero-unit {
+    background-color: #222222;
+    background-image: url("../img/web-macbook.png");
+    *//*background-position: right bottom;*//*
+    background-position: 500px -65px;
+    background-repeat: no-repeat;
+    *//*background-size: contain;*//*
+    border-radius: inherit;
+    color: white;
+}*/
+
+/*.hero-unit:after {
+    background-image: url("../img/web-macbook.png");
+    background-repeat: no-repeat;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+}*/
+
+.hero-unit {
+    text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+    background: #020031; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #020031 0%, #6d3353 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* IE10+ */
+    background: linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+    -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+    box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+    color: white;
+    border-radius: inherit;
+}
+
+.form-horizontal .control-label {
+    width: 100px;
+}
+
+.form-horizontal .controls {
+    margin-left: 110px;
+}
+
+.well {
+    -webkit-box-shadow: 0 0 5px #efefef;
+    -moz-box-shadow: 0 0 5px #efefef;
+    box-shadow: 0 0 5px #efefef;
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef));*/
+    /*background: -moz-linear-gradient(top,  #fff,  #efefef);*/
+    padding-bottom: 0;
+    max-width: 230px;
+    min-width: 220px;
+}
+
+@media (max-width: 480px) {
+    .hero-unit {
+        padding: 30px;
+        /*background-image: none;*/
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-unit {
+        /*background-position: 300px -65px;*/
+    }
+}
+
+@media (max-width: 980px) {
+    body {
+        padding-top: 0;
+    }
+}
