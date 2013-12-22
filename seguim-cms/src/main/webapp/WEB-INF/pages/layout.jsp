@@ -35,9 +35,11 @@
 
 <tiles:insertAttribute name="body"/>
 
-<hr>
+<div class="container">
+    <hr>
 
-<jsp:include page="layout/footer.inc.jsp"/>
+    <jsp:include page="layout/footer.inc.jsp"/>
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="${pageContext.request.contextPath}/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

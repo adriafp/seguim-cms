@@ -1,3 +1,3 @@
 <footer>
-    <p>&copy; Java4ever.net 2013</p>
+    <p>&copy; Seguim.com 2014</p>
 </footer>

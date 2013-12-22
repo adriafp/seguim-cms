@@ -12,30 +12,16 @@
 
 	<function>
 		<description>
-			Return the list of folders inside a directory filtering by bucket.
+			Return the list of folders and files inside a directory filtering by bucket.
 		</description>
-		<name>getListFolders</name>
+		<name>listObjects</name>
 		<function-class>
 			com.seguim.aws.Functions
 		</function-class>
-		<function-signature>java.util.List getListFolders(java.lang.String,java.lang.String)</function-signature>
+		<function-signature>com.amazonaws.services.s3.model.ObjectListing listObjects(java.lang.String,java.lang.String,int)</function-signature>
 		<example>
-			${saws:getListFolders("bucketName","dirName")}
+			${saws:listObjects("bucketName","dirName",maxObjects)}
 		</example>
 	</function>
-
-    <function>
-        <description>
-            Return the list of files inside a directory filtering by bucket.
-        </description>
-        <name>getListFiles</name>
-        <function-class>
-            com.seguim.aws.Functions
-        </function-class>
-        <function-signature>java.util.List getListFiles(java.lang.String,java.lang.String)</function-signature>
-        <example>
-            ${saws:getListFiles("bucketName","dirName")}
-        </example>
-    </function>
 
 </taglib>

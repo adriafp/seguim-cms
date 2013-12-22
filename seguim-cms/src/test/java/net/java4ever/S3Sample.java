@@ -28,29 +28,38 @@ public class S3Sample {
                         "/AwsCredentials.properties")));
         try {
             System.out.println("Downloading an object");
-            ListObjectsRequest listObjectsRequest = new ListObjectsRequest(bucketName,"vv/","","/",10000);
+            ListObjectsRequest listObjectsRequest = new ListObjectsRequest(bucketName,"vv/1-Primero/","","/",10000);
             ObjectListing objectListing = s3Client.listObjects(listObjectsRequest);
             List<String> commonPrefixes = objectListing.getCommonPrefixes();
             System.out.println("commonPrefixes = " + commonPrefixes);
+
+//            for(String prefix:commonPrefixes) {
+//                System.out.println("prefix = " + prefix);
+//                ObjectMetadata objectMetadata = s3Client.getObjectMetadata(bucketName, "/" + prefix + "$dir$");
+//                System.out.println("objectMetadata = " + objectMetadata);
+//            }
+
             for(S3ObjectSummary s3ObjectSummary : objectListing.getObjectSummaries()) {
                 System.out.println("s3ObjectSummary = " + s3ObjectSummary.getKey());
             }
 
-//            S3Object s3object = s3Client.getObject(new GetObjectRequest(
-//                    bucketName, key));
-//            System.out.println("Content-Type: "  +
-//                    s3object.getObjectMetadata().getContentType());
-//            displayTextInputStream(s3object.getObjectContent());
-//
-//            // Get a range of bytes from an object.
-//
-//            GetObjectRequest rangeObjectRequest = new GetObjectRequest(
-//                    bucketName, key);
-//            rangeObjectRequest.setRange(0, 10);
-//            S3Object objectPortion = s3Client.getObject(rangeObjectRequest);
-//
-//            System.out.println("Printing bytes retrieved.");
-//            displayTextInputStream(objectPortion.getObjectContent());
+            ObjectMetadata objectMetadata = s3Client.getObjectMetadata(bucketName, "vv/1-Primero/FSICA/$dir$");
+
+            S3Object s3object = s3Client.getObject(new GetObjectRequest(
+                    bucketName, "vv/1-Primero/FSICA/$dir$"));
+            System.out.println("Content-Type: "  +
+                    s3object.getObjectMetadata().getContentType());
+            displayTextInputStream(s3object.getObjectContent());
+
+            // Get a range of bytes from an object.
+
+            GetObjectRequest rangeObjectRequest = new GetObjectRequest(
+                    bucketName, key);
+            rangeObjectRequest.setRange(0, 10);
+            S3Object objectPortion = s3Client.getObject(rangeObjectRequest);
+
+            System.out.println("Printing bytes retrieved.");
+            displayTextInputStream(objectPortion.getObjectContent());
 
         } catch (AmazonServiceException ase) {
             System.out.println("Caught an AmazonServiceException, which" +
