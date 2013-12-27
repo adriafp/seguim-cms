@@ -24,4 +24,84 @@
 		</example>
 	</function>
 
+    <function>
+        <description>
+            Return the list of folders and files inside a directory filtering by bucket.
+        </description>
+        <name>saveOrUpdate</name>
+        <function-class>
+            com.seguim.aws.Functions
+        </function-class>
+        <function-signature>void _saveOrUpdate(java.lang.String,java.lang.String,java.util.Map)</function-signature>
+        <example>
+            ${saws:saveOrUpdate("domain","itemName","json")}
+        </example>
+    </function>
+
+    <function>
+        <description>
+            Return the list of folders and files inside a directory filtering by bucket.
+        </description>
+        <name>get</name>
+        <function-class>
+            com.seguim.aws.Functions
+        </function-class>
+        <function-signature>java.util.Map _get(java.lang.String,java.lang.String)</function-signature>
+        <example>
+            ${saws:get("domain","itemName")}
+        </example>
+    </function>
+    <function>
+        <description>
+            Return the list of folders and files inside a directory filtering by bucket.
+        </description>
+        <name>new</name>
+        <function-class>
+            com.seguim.aws.Functions
+        </function-class>
+        <function-signature>java.util.Map _new()</function-signature>
+        <example>
+            ${saws:new()}
+        </example>
+    </function>
+    <function>
+        <description>
+            Return the list of folders and files inside a directory filtering by bucket.
+        </description>
+        <name>newFromJSON</name>
+        <function-class>
+            com.seguim.aws.Functions
+        </function-class>
+        <function-signature>java.util.Map _new(java.lang.String)</function-signature>
+        <example>
+            ${saws:newFromJSON("json")}
+        </example>
+    </function>
+    <function>
+        <description>
+            Return the list of folders and files inside a directory filtering by bucket.
+        </description>
+        <name>search</name>
+        <function-class>
+            com.seguim.aws.Functions
+        </function-class>
+        <function-signature>java.util.Map _search(java.lang.String,java.lang.String,java.lang.String,int)</function-signature>
+        <example>
+            ${saws:search(domain, where, sort, limit)}
+        </example>
+    </function>
+    <function>
+        <description>
+            Return the list of folders and files inside a directory filtering by bucket.
+        </description>
+        <name>del</name>
+        <function-class>
+            com.seguim.aws.Functions
+        </function-class>
+        <function-signature>void _delete(java.lang.String,java.lang.String)</function-signature>
+        <example>
+            ${saws:del(domain, itemName)}
+        </example>
+    </function>
+
 </taglib>

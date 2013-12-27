@@ -1,6 +1,6 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<%@ taglib prefix="auth" uri="http://www.springframework.org/security/tags" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,7 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <%--<meta name="viewport" content="width=device-width">--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
     <style>
@@ -31,22 +32,20 @@
 <![endif]-->
 
 <jsp:include page="layout/header.inc.jsp"/>
+
+<tiles:insertAttribute name="body"/>
+
 <div class="container">
-
-    <tiles:insertAttribute name="body"/>
-
     <hr>
 
     <jsp:include page="layout/footer.inc.jsp"/>
+</div>
 
-</div> <!-- /container -->
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="${pageContext.request.contextPath}/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
 <script src="${pageContext.request.contextPath}/js/vendor/bootstrap.min.js"></script>
-<auth:authorize ifAnyGranted="ROLE_USER">
-    <script src="${pageContext.request.contextPath}/js/admin_main.js"></script>
-</auth:authorize>
+
 <script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 <script>
